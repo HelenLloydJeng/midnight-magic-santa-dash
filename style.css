@@ -1,0 +1,30 @@
+/* Core Layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+    background-color: #000b1a; /* Dark night sky */
+}
+
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.city-stop {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+/* Temporary background colors to see the snap happen */
+#london { background: linear-gradient(#001d3d, #003566); }
+#paris { background: linear-gradient(#003566, #001d3d); }
+#tokyo { background: linear-gradient(#001d3d, #003566); }
+#newyork { background: linear-gradient(#003566, #001d3d); }
