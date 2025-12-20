@@ -24,7 +24,15 @@ body {
 }
 
 /* Temporary background colors to see the snap happen */
-#london { background: linear-gradient(#001d3d, #003566); }
-#paris { background: linear-gradient(#003566, #001d3d); }
-#tokyo { background: linear-gradient(#001d3d, #003566); }
-#newyork { background: linear-gradient(#003566, #001d3d); }
+#london {
+    background: linear-gradient(#001d3d, #003566);
+}
+#paris {
+    background: linear-gradient(#003566, #001d3d);
+}
+#tokyo {
+    background: linear-gradient(#001d3d, #003566);
+}
+#newyork {
+    background: linear-gradient(#003566, #001d3d);
+}
