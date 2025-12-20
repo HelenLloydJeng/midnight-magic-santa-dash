@@ -4,6 +4,28 @@ A high-performance, accessible web experience following Santa's journey across t
 ## 🌟 The Vision
 Midnight Magic is an interactive storytelling experience that follows Santa’s sleigh across the globe. Built for the Festive Frontend Hackathon, this project focuses on high-end UI/UX, scroll-driven animations, and celebrating global traditions.
 
+## 👤 User Stories
+
+### 🗺️ The Festive Explorer
+**As a** visitor to the site,  
+**I want to** scroll smoothly between different global cities,  
+**So that** I can experience Santa's journey as a seamless narrative.
+
+### 🍪 The Global Resident
+**As a** user from one of the featured cities,  
+**I want to** see my local holiday snack traditions represented,  
+**So that** I feel a personal connection to the global celebration.
+
+### 📣 The Holiday Cheerleader
+**As an** interactive user,  
+**I want to** click a "Cheer" button for my favorite destination,  
+**So that** my vote is remembered even if I refresh the page.
+
+### ⌨️ The Accessible Traveler
+**As a** keyboard-only or screen-reader user,  
+**I want to** navigate the route using standard web standards (ARIA),  
+**So that** I can enjoy the holiday magic without barriers.
+
 ## 🗺️ The Route
 Follow the magic through four iconic time zones:
 - **London, UK**: Mince Pies & Sherry
