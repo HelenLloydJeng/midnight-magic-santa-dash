@@ -1,10 +1,22 @@
-# midnight-magic-santa-dash
 # 🛷 Midnight Magic: Santa's Global Dash 🎅
-
 A high-performance, accessible web experience following Santa's journey across the globe. Built for the [Hackathon Name] 2025.
 
 ## 🌟 The Vision
-An interactive, scroll-based journey that highlights festive traditions in London, Paris, Tokyo, and New York, emphasizing global connection and holiday cheer.
+Midnight Magic is an interactive storytelling experience that follows Santa’s sleigh across the globe. Built for the Festive Frontend Hackathon, this project focuses on high-end UI/UX, scroll-driven animations, and celebrating global traditions.
+
+## 🗺️ The Route
+Follow the magic through four iconic time zones:
+- **London, UK**: Mince Pies & Sherry
+- **Paris, France**: Bûche de Noël
+- **Tokyo, Japan**: Festive Fried Chicken & Cake
+- **New York, USA**: Milk & Cookies
+
+## 🛠️ Features
+- **Scroll-Snap Storytelling**: A seamless narrative flow using CSS Scroll Snapping.
+- **Dynamic Sleigh Animation**: A fixed-position sleigh that reacts to your scroll progress.
+- **Global Snack Cards**: Interactive components showcasing local festive food traditions.
+- **Persistent 'Cheer' System**: Interactive voting logic powered by Local Storage.
+- **Responsive Design**: A mobile-first approach to festive magic.
 
 ## 🛠️ Tech Stack
 - **Frontend:** HTML5, CSS3 (Scroll-Snap, Flexbox), JavaScript (ES6)
