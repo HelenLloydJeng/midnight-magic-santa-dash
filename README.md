@@ -1,8 +1,9 @@
 # 🛷 Midnight Magic: Santa's Global Dash 🎅
-A high-performance, accessible web experience following Santa's journey across the globe. Built for the [Hackathon Name] 2025.
+An accessible, scroll-driven web experience following Santa's journey across the globe.
+ Built for the [Hackathon Name] 2025.
 
 ## 🌟 The Vision
-Midnight Magic is an interactive storytelling experience that follows Santa’s sleigh across the globe. Built for the Festive Frontend Hackathon, this project focuses on high-end UI/UX, scroll-driven animations, and celebrating global traditions.
+Midnight Magic is an interactive storytelling experience that follows Santa’s sleigh across the globe. Built for the Festive Frontend Hackathon, this project focuses on high-end UI/UX, scroll-driven animations, and celebrating global traditions.  It deliberately focuses on a small number of locations to ensure a polished, complete experience.
 
 ## 👤 User Stories
 
@@ -35,15 +36,17 @@ Follow the magic through four iconic time zones:
 
 ## 🛠️ Features
 - **Scroll-Snap Storytelling**: A seamless narrative flow using CSS Scroll Snapping.
+- **Responsive Design**: A mobile-first approach to festive magic.
+- **Accessible Navigation**  (ARIA + semantic HTML)
 - **Dynamic Sleigh Animation**: A fixed-position sleigh that reacts to your scroll progress.
 - **Global Snack Cards**: Interactive components showcasing local festive food traditions.
 - **Persistent 'Cheer' System**: Interactive voting logic powered by Local Storage.
-- **Responsive Design**: A mobile-first approach to festive magic.
+
 
 ## 🛠️ Tech Stack
 - **Frontend:** HTML5, CSS3 (Scroll-Snap, Flexbox), JavaScript (ES6)
 - **Accessibility:** ARIA Landmarks, Semantic HTML, Screen-reader optimized
-- **Design:** Glassmorphism, Festive UI
+- **Design:** Festive UI with modern visual layering
 
 ## 📁 Project Structure
 - `index.html`: Semantic structure & ARIA landmarks.
@@ -57,6 +60,6 @@ Follow the magic through four iconic time zones:
 - `feature-/*`: Architectural or logic updates.
 
 ## 👥 The Team
-- **Lead/Accessibility:** [Helen Lloyd-Jeng]
+- **UI, Content & Accessibility**: Helen Lloyd-Jeng
 - **Architecture:** []
 - **Narrative/Media:** []
