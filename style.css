@@ -8,34 +8,29 @@ body {
 }
 
 .scroll-container {
+    position: relative;
+    overflow: auto;
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    
 }
 /* Navigation bar */
 
-.navbar {
-   background-color: navy;
-   list-style-type: none;
-   margin: 0; 
-   padding: 20;
-   display: flex;
-   position: relative;
-   justify-content: space-evenly;
-   text-align: center;
-   gap: 2rem;
-   position: fixed;
-   top: 5;
-   width: 100%;
-   z-index: 2000;
 
-}
-.navbar > li > a {
-       color: white;
-}
-
-.button {
-    background-color: black;
+#main-nav {
+    list-style-type: none;
+    position: fixed;
+    margin-top: 0px;
+    left: 0;
+    width: 96.8%;
+    height: 60px; /* Give it a set height */
+    z-index: 1; /* Ensure it's the highest thing on the page */
+    background: rgba(12, 45, 92, 0.8); / Match your body color with transparency */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .city-stop {
