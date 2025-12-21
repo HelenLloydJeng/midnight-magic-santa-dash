@@ -3,46 +3,62 @@
    ========================================== */
 // [Keep existing scroll/nav code here]
 
-  /* ==========================================
-   2. INTERACTIVE COMPONENTS (Cheer System)
-   ========================================== */
+ /* ==========================================
+    2. INTERACTIVE COMPONENTS (Cheer System)
+    ========================================== */
 
-// 1. SELECT ELEMENTS: Grab all the cheer buttons first
+// 1. SELECT ELEMENTS
 const cheerButtons = document.querySelectorAll('.cheer-btn');
 
-// 2. FUNCTIONS: Define the "Brain" of the system
+// 2. FUNCTIONS (The "Brain")
+
+// Helper to update the text on the screen
+function updateCounterDisplay(city) {
+    const count = localStorage.getItem(`cheer_count_${city}`) || 0;
+    const displayElement = document.getElementById(`${city}-count`);
+    if (displayElement) {
+        displayElement.innerText = count;
+    }
+}
+
+// Logic to increase the number
 function handleCheer(city, button) {
-    console.log(`[DEBUG] Saving cheer for: ${city}`); 
-    localStorage.setItem(`cheer_${city}`, 'true');
+    let currentCount = parseInt(localStorage.getItem(`cheer_count_${city}`)) || 0;
+    currentCount++;
+    
+    localStorage.setItem(`cheer_count_${city}`, currentCount);
+    localStorage.setItem(`has_cheered_${city}`, 'true'); 
+    
+    updateCounterDisplay(city);
     applyCheeredState(button);
 }
 
+// Logic to change button appearance
 function applyCheeredState(button) {
     button.textContent = "Cheered! ❤️";
     button.classList.add('cheered');
     button.disabled = true;
 }
 
+// Logic to check storage when page opens
 function loadExistingCheers() {
     cheerButtons.forEach(button => {
         const city = button.getAttribute('data-city');
-        const hasCheered = localStorage.getItem(`cheer_${city}`);
+        updateCounterDisplay(city);
 
+        const hasCheered = localStorage.getItem(`has_cheered_${city}`);
         if (hasCheered === 'true') {
             applyCheeredState(button);
         }
     });
 }
 
-// 3. EXECUTION: Actually start listening and checking storage
-// Run the check immediately on page load
+// 3. EXECUTION (The "Start" switch)
 loadExistingCheers();
 
-// Listen for clicks
 cheerButtons.forEach(button => {
     button.addEventListener('click', () => {
         const city = button.getAttribute('data-city');
-        console.log("Button clicked for:", city);
         handleCheer(city, button);
     });
 });
