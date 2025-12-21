@@ -1,31 +1,52 @@
-// 1. Check if the file is linked
-console.log("🎅 Santa's Global Dash: script.js is connected!");
+/* ==========================================
+   1. NAVIGATION & SCROLL LOGIC (Veteran's Area)
+   ========================================== */
+// [Keep existing scroll/nav code here]
 
-// 2. Test Accessibility: Can we find our ARIA-labeled elements?
-const sleigh = document.getElementById('sleigh');
-if (sleigh) {
-    console.log("✅ Success: Found the sleigh. ARIA label is: " + sleigh.getAttribute('aria-label'));
-    
-    // Quick visual test: Make the sleigh bounce once when the page loads
-    sleigh.style.transition = "transform 0.5s ease-in-out";
-    sleigh.style.transform = "translateY(-20px)";
-    setTimeout(() => {
-        sleigh.style.transform = "translateY(0)";
-    }, 500);
-} else {
-    console.error("❌ Error: Could not find the sleigh element. Check your HTML IDs!");
-}
+  /* ==========================================
+   2. INTERACTIVE COMPONENTS (Cheer System)
+   ========================================== */
 
-// 3. Test the "Cheer" Buttons
+// 1. SELECT ELEMENTS: Grab all the cheer buttons first
 const cheerButtons = document.querySelectorAll('.cheer-btn');
 
-cheerButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        const cityName = btn.closest('section').id;
-        console.log(`❤️ Cheer sent for: ${cityName}!`);
-        alert(`You spread festive cheer in ${cityName.toUpperCase()}! 🎄`);
-        
-        // Accessibility Win: Update the ARIA state visually if we had a toggle
-        // For now, let's just log it.
+// 2. FUNCTIONS: Define the "Brain" of the system
+function handleCheer(city, button) {
+    console.log(`[DEBUG] Saving cheer for: ${city}`); 
+    localStorage.setItem(`cheer_${city}`, 'true');
+    applyCheeredState(button);
+}
+
+function applyCheeredState(button) {
+    button.textContent = "Cheered! ❤️";
+    button.classList.add('cheered');
+    button.disabled = true;
+}
+
+function loadExistingCheers() {
+    cheerButtons.forEach(button => {
+        const city = button.getAttribute('data-city');
+        const hasCheered = localStorage.getItem(`cheer_${city}`);
+
+        if (hasCheered === 'true') {
+            applyCheeredState(button);
+        }
+    });
+}
+
+// 3. EXECUTION: Actually start listening and checking storage
+// Run the check immediately on page load
+loadExistingCheers();
+
+// Listen for clicks
+cheerButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const city = button.getAttribute('data-city');
+        console.log("Button clicked for:", city);
+        handleCheer(city, button);
     });
 });
+/* ==========================================
+   3. UI ENHANCEMENTS (Newbie's Area)
+   ========================================== */
+// [Keep any asset or text-swapping code here]
