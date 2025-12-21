@@ -12,6 +12,31 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
+/* Navigation bar */
+
+.navbar {
+   background-color: navy;
+   list-style-type: none;
+   margin: 0; 
+   padding: 20;
+   display: flex;
+   position: relative;
+   justify-content: space-evenly;
+   text-align: center;
+   gap: 2rem;
+   position: fixed;
+   top: 5;
+   width: 100%;
+   z-index: 2000;
+
+}
+.navbar > li > a {
+       color: white;
+}
+
+.button {
+    background-color: black;
+}
 
 .city-stop {
     height: 100vh;
