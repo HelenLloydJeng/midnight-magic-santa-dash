@@ -21,10 +21,43 @@ body {
     justify-content: center;
     scroll-snap-align: start;
     text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
-/* Temporary background colors to see the snap happen */
-#london { background: linear-gradient(#001d3d, #003566); }
-#paris { background: linear-gradient(#003566, #001d3d); }
-#tokyo { background: linear-gradient(#001d3d, #003566); }
-#newyork { background: linear-gradient(#003566, #001d3d); }
+.glass-card {
+    background: rgba(255, 255, 255, 0.15); /* White tint */
+    backdrop-filter: blur(12px);          /* The magic blur */
+    -webkit-backdrop-filter: blur(12px);   /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2.5rem;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Specific City Backgrounds */
+#london { 
+    background-image: url('assets/background-images/london-bg.webp'); 
+}
+#paris { 
+    background-image: url('assets/background-images/paris-bg.webp'); 
+}
+#tokyo { 
+    background-image: url('assets/background-images/tokyo-bg.webp'); 
+}
+#newyork { 
+    background-image: url('assets/background-images/newyork-bg.webp'); 
+}
+
+#sleigh {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    z-index: 1000; /* Keeps it above everything */
+    pointer-events: none; /* Allows clicking "through" the sleigh to buttons below */
+}
