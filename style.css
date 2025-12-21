@@ -11,6 +11,23 @@ body {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    
+}
+/* Navigation bar */
+
+#main-nav {
+    list-style-type: none;
+    position: fixed;
+    margin-top: 0px;
+    left: 0;
+    width: 96.8%;
+    height: 60px; /* Give it a set height */
+    z-index: 1; /* Ensure it's the highest thing on the page */
+    background: rgba(12, 45, 92, 0.8); /* Match your body color with transparency */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .city-stop {
