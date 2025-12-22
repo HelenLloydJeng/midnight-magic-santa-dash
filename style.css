@@ -10,31 +10,86 @@ body {
 }
 
 .scroll-container {
-    position: relative;
-    overflow: auto;
     height: 100vh;
     overflow-y: auto; /* IMPORTANT: This brings your city scrolling back! */
     scroll-snap-type: y mandatory;
+    padding-top: 64px; 
+    box-sizing: border-box;
+    width: 100%;
     scroll-behavior: smooth;
 }
-/* Navigation bar */
 
-
+/* Navigation Bar - Fixes the Overflowing Names */
 #main-nav {
-    list-style-type: none;
     position: fixed;
-    margin-top: 0px;
+    top: 0;           
     left: 0;
-    width: 96.8%;
-    height: 60px; /* Give it a set height */
-    z-index: 1; /* Ensure it's the highest thing on the page */
-    background: rgba(12, 45, 92, 0.8); / Match your body color with transparency */
+    width: 100%;      
+    height: 64px;     
+    z-index: 10000;   
+    background: rgba(0, 11, 26, 0.7); /* Darker for better readability */
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Space between groups */
     align-items: center;
+    padding: 0 20px; /* Side breathing room */
+    box-sizing: border-box; /* Keeps everything inside the 100% width */
 }
 
+/* Grouping the Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px; /* Tighter gap so "New York" fits on smaller screens */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem; /* Slightly smaller for a pro look */
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+    white-space: nowrap; /* Prevents city names from wrapping */
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 77, 77, 0.2); 
+    color: #ff4d4d; 
+}
+
+/* Countdown Box */
+.timebox {
+    display: flex;
+    gap: 15px; 
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.time {
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    line-height: 1.1;
+}
+
+.time p {
+    margin: 0;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* City Sections */
 .city-stop {
     height: 100vh;
     display: flex;
