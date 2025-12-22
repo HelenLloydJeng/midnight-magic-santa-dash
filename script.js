@@ -105,6 +105,16 @@ cheerButtons.forEach(button => {
         handleCheer(city, button);
     });
 });
+
+function addCheer(cityId) {
+    const countElement = document.getElementById(cityId + "-count");
+    let currentCount = parseInt(countElement.innerText);
+    currentCount++;
+    countElement.innerText = currentCount;
+    
+    // Optional: Add a little console log for fun
+    console.log("Cheer sent to " + cityId + "! Total: " + currentCount);
+}
 /* ==========================================
    3. UI ENHANCEMENTS (Newbie's Area)
    ========================================== */
