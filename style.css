@@ -11,6 +11,61 @@ body {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    padding-top: 60px; 
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden; /* Stops any side-to-side wiggling */
+   
+}
+
+/* Navigation bar */
+
+#main-nav {
+    list-style-type: none;
+    position: fixed;
+    top: 0;           /* Ensure it's snapped to the very top */
+    left: 0;
+    width: 100vw;      /*  100vw to respect edge */
+    height: 50px; 
+    margin: 0;        /* Removed default margins */
+    padding: 0;
+    z-index: 10000;   /* Increased to stay above the sleigh and cards */
+    
+    /* Elegant Glass Effect */
+    background: rgba(0, 11, 26, 0.3); /* Much lighter, more 'frosted' */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+#main-nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 20px; /* Prepares for a nice pill-shaped hover */
+}
+
+#main-nav li a:hover {
+    /* Instead of a solid red block, let's use a festive glow */
+    background-color: rgba(255, 77, 77, 0.2); 
+    color: #ff4d4d; /* Matches your Santa Red titles */
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
+}
+
+#london {
+    background-image: url('assets/background-images/london-bg.webp');
+    /* Push the actual photo down 50px so the top of the Eye clears the nav */
+    background-position: center 0.5px; 
 }
 
 .city-stop {
@@ -109,12 +164,12 @@ body {
 
 #sleigh {
     position: fixed;
-    top: 20px;
+    top: 75px;
     right: 20px;
     font-size: 2rem;
     z-index: 1000; /* Keeps it above everything */
     pointer-events: none; /* Allows clicking "through" the sleigh to buttons below */
-}
+    }
 
 .food-img {
     width: 110px;
