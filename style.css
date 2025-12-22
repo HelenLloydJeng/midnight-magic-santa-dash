@@ -14,30 +14,84 @@ body {
 }
 
 .city-stop {
-    height: 100vh;
+   height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-end; 
+    /* This pushes everything to the RIGHT */
+    align-items: flex-end;   
     scroll-snap-align: start;
-    text-align: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
+    /*  Padding keeps it from touching the very edge of the screen */
+    padding-bottom: 5vh;
+    padding-right: 5%; 
+    box-sizing: border-box;     
+}
+
+.city-stop h1 {
+    order: 2;
+    width: auto;
+    /* Aligns the text itself to the right */
+    text-align: right; 
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    margin: 10px 0 0 0; 
+    line-height: 1.1;
+}
+
+/* Add festive color to the first letter */
+.city-stop h1::first-letter {
+    color: #ff4d4d; /* Santa Red */
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.15); /* White tint */
+    order: 1;               /* Ensures card stays above the title */
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.03); /* White tint */
     backdrop-filter: blur(12px);          /* The magic blur */
     -webkit-backdrop-filter: blur(12px);   /* Safari support */
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 2.5rem;
+    padding: 1rem;
     border-radius: 20px;
+    margin-top: 20px;        /* 3. Keeps it closer to the city title */
     color: white;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     text-align: center;
+    max-width: 320px;       /* Keeps the card from getting too wide */
+    width: 90%;             /* Ensures it looks good on mobile too */
+   margin: 0;
+        text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
+.glass-card h2 {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.glass-card p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin: 5px 0;
+}
+
+.cheer-display {
+    font-size: 0.85rem !important;
+    margin: 5px 0 !important;
+}
+
+.cheer-btn {
+    padding: 5px 15px;
+    font-size: 0.8rem;
+}
+
 
 /* Specific City Backgrounds */
 #london { 
@@ -60,4 +114,15 @@ body {
     font-size: 2rem;
     z-index: 1000; /* Keeps it above everything */
     pointer-events: none; /* Allows clicking "through" the sleigh to buttons below */
+}
+
+.food-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes them circular */
+    border: 3px solid white;
+    margin: 8px auto;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
