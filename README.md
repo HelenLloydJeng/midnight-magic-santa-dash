@@ -42,6 +42,11 @@ Follow the magic through four iconic time zones:
 - **Curated Narrative**: Historically researched tradition logs for every global stop, providing cultural context beyond simple food facts.
 - **Responsive & Cross-Browser**: Tested across Chrome, Safari, Firefox, and mobile devices to ensure a universal festive experience.
 - **Persistent 'Cheer' System**: Interactive voting logic powered by Local Storage.
+-**Dynamic **Countdown**: Real-time JavaScript countdown to Christmas Day.
+
+F-**Festive Animations**: CSS-based snowfall overlay for a seasonal atmosphere.
+
+
 
 
 ## 🛠️ Tech Stack

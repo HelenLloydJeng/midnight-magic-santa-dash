@@ -15,3 +15,53 @@ Dec 22 | Navigation | Click Navbar | Smooth scroll to city | Target section reac
 | Dec 22 | UI Alignment | Scroll to sections | City titles right-aligned | H1 width set to 100% / right | ✅ Pass |
 | Dec 22 | Sleigh Visibility | Check Sleigh size | Mascot should be prominent | Increased to 5rem with flight tilt | ✅ Pass |
 | Dec 22 | Emoji Rendering | Verify Deployment | Sleigh must show on Live Site | Fixed with inline-block display | ✅ Pass |
+
+## 🎄 Santa Dash: Feature & Layout Testing
+
+### **Functional Testing**
+
+| Feature | Test Description | Expected Result | Pass/Fail |
+| :--- | :--- | :--- | :--- |
+| **Countdown Timer** | Load page and observe clock. | Timer should display days, hours, minutes, and seconds remaining until Dec 25, 2025. | [ ] |
+| **Navbar Links** | Click each city name in the header. | Page should jump smoothly to the corresponding city section. | [ ] |
+| **Scroll Snapping** | Use mouse wheel to scroll between cities. | The section should automatically "snap" to the center of the screen. | [ ] |
+| **Sleigh Movement** | Observe the Santa icon. | Santa should animate across the screen or "bob" without stopping. | [ ] |
+
+### **Visual & Layering (Z-Index) Testing**
+
+| Element | Test Description | Expected Result | Pass/Fail |
+| :--- | :--- | :--- | :--- |
+| **Sleigh Depth** | Scroll so sleigh passes a card. | The sleigh should pass **behind** the Glass Cards but **in front** of the city backgrounds. | [ ] |
+| **Navbar Persistence** | Scroll to the bottom of the page. | The navigation bar must remain "Fixed" at the top of the viewport. | [ ] |
+| **Glass Card Clarity** | Check text against city images. | The frosted glass effect should make the text readable regardless of the background image. | [ ] |
+| **Mobile Layout** | View on small screen / Dev Tools. | Cards should stack vertically and text should not overflow the screen edges. | [ ] |
+
+### **Bug Fixes & Resolutions**
+
+| Issue | Resolution | Status |
+| :--- | :--- | :--- |
+| **Missing Content** | Resolved merge conflict in `index.html` and restored city facts. | Fixed |
+| **Hidden Sleigh** | Corrected `z-index` layering; moved sleigh above background (z-index: 5). | Fixed |
+| **Countdown 00** | Moved `script.js` link to the bottom of the body to ensure DOM load. | Fixed |
+## 🎄 Santa Dash: Final Phase 1 Testing
+
+### **Interactive Features**
+
+| Feature | Test Description | Expected Result | Pass/Fail |
+| :--- | :--- | :--- | :--- |
+| **Countdown Logic** | Load page and check timer. | Shows days/hours/mins until Dec 25, 2025. | [ ] |
+| **Snowfall Overlay** | Observe visual layer. | Snow falls smoothly without blocking navbar clicks. | [ ] |
+| **Cheer Buttons** | Click "Send Cheer" and refresh page. | Count increases AND stays saved after page refresh. | [ ] |
+| **Responsive Design** | Shrink browser window. | Glass cards and city facts stack neatly for mobile. | [ ] |
+
+### **Console Health Check**
+
+| Log Item | Expected Output | Pass/Fail |
+| :--- | :--- | :--- |
+| **JS Initialization** | "Countdown script initialized for Dec 2025!" | [ ] |
+| **LocalStorage** | "Cheer added for london! Total: X" | [ ] |
+| **Errors** | No red "Uncaught TypeError" or "Null" errors. | [ ] |
+
+### **Final Bug Log**
+* **Merge Conflicts:** Resolved branch divergence between `main` and `sidebar`.
+* **Script Load:** Moved `script.js` to the bottom of the body to ensure DOM elements are found.
