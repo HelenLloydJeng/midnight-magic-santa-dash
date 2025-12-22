@@ -39,6 +39,7 @@ Follow the magic through four iconic time zones:
 - **Glassmorphism Effects**: Modern navigation and snack cards utilizing `backdrop-filter` for a frosted-glass festive aesthetic.
 - **Sticky Global Navigation**: A fixed, transparent navbar allowing instant travel between London, Paris, Tokyo, and New York.
 - **Scroll-Snap Storytelling**: A seamless narrative flow using CSS Scroll Snapping.
+- **Curated Narrative**: Historically researched tradition logs for every global stop, providing cultural context beyond simple food facts.
 - **Responsive & Cross-Browser**: Tested across Chrome, Safari, Firefox, and mobile devices to ensure a universal festive experience.
 - **Persistent 'Cheer' System**: Interactive voting logic powered by Local Storage.
 
