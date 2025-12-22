@@ -30,6 +30,15 @@ body {
     align-items: center;
 }
 
+li > a {
+    color: white;
+}
+
+li > a:hover {
+    background-color: red;
+    color: white
+}
+
 .city-stop {
     height: 100vh;
     display: flex;
