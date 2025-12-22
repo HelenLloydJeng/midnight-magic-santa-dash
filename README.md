@@ -67,6 +67,32 @@ F-**Festive Animations**: CSS-based snowfall overlay for a seasonal atmosphere.
 
 ## 👥 The Team
 - **Lead Developer (UI, Content & Layout Optimization)**: Helen Lloyd-Jeng
-- **Architecture & Navigation Integration**: [Name 1]
-- **Narrative & Cross-Platform Testing**: [Name 2]
+- **Architecture & Navigation Integration**: [sala]
+- **Narrative images & Cross-Platform Testing**: [Dom]
 
+
+## 📜 Credits & Acknowledgments
+
+### **Content & Media**
+- **Images:** City backgrounds sourced from [Unsplash/Pexels] and customized for the "Midnight Magic" theme.
+- **Icons:** Santa Sleigh and festive icons provided by [FontAwesome/Google Fonts].
+- **Fonts:** Festive typography sourced from Google Fonts.
+
+### **Technical Tools**
+- **Layout:** Built with CSS Flexbox and CSS Grid for a responsive, mobile-first design.
+- **Animations:** Custom CSS Keyframes used for the snowfall and sleigh movement.
+- **Version Control:** Managed via GitHub with a branch-based workflow (`main` and `sidebar`).
+### **Technical Support**
+- **AI Mentorship:** Assisted by Gemini (Google) for debugging, Git conflict resolution, and feature optimization.
+
+### **Special Thanks**
+- **The Coding Community:** For the logic behind the persistent LocalStorage "Cheer" system.
+- **Testing:** Peer-reviewed and tested for cross-browser compatibility (Chrome, Firefox, Safari).
+
+---
+
+## 🛠️ Technologies Used
+* **HTML5:** Structural backbone.
+* **CSS3:** Custom styling, glassmorphism, and snowfall animations.
+* **JavaScript (ES6):** Dynamic countdown logic and persistent vote counters.
+* **Git/GitHub:** Deployment and version history.
