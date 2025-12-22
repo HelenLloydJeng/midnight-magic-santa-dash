@@ -43,3 +43,25 @@ Dec 22 | Navigation | Click Navbar | Smooth scroll to city | Target section reac
 | **Missing Content** | Resolved merge conflict in `index.html` and restored city facts. | Fixed |
 | **Hidden Sleigh** | Corrected `z-index` layering; moved sleigh above background (z-index: 5). | Fixed |
 | **Countdown 00** | Moved `script.js` link to the bottom of the body to ensure DOM load. | Fixed |
+## 🎄 Santa Dash: Final Phase 1 Testing
+
+### **Interactive Features**
+
+| Feature | Test Description | Expected Result | Pass/Fail |
+| :--- | :--- | :--- | :--- |
+| **Countdown Logic** | Load page and check timer. | Shows days/hours/mins until Dec 25, 2025. | [ ] |
+| **Snowfall Overlay** | Observe visual layer. | Snow falls smoothly without blocking navbar clicks. | [ ] |
+| **Cheer Buttons** | Click "Send Cheer" and refresh page. | Count increases AND stays saved after page refresh. | [ ] |
+| **Responsive Design** | Shrink browser window. | Glass cards and city facts stack neatly for mobile. | [ ] |
+
+### **Console Health Check**
+
+| Log Item | Expected Output | Pass/Fail |
+| :--- | :--- | :--- |
+| **JS Initialization** | "Countdown script initialized for Dec 2025!" | [ ] |
+| **LocalStorage** | "Cheer added for london! Total: X" | [ ] |
+| **Errors** | No red "Uncaught TypeError" or "Null" errors. | [ ] |
+
+### **Final Bug Log**
+* **Merge Conflicts:** Resolved branch divergence between `main` and `sidebar`.
+* **Script Load:** Moved `script.js` to the bottom of the body to ensure DOM elements are found.
