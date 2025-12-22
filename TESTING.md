@@ -14,3 +14,4 @@ Dec 22 | Navigation | Click Navbar | Smooth scroll to city | Target section reac
 | Dec 22 | Content Accuracy | Read city cards | Historical facts included | Added Tokyo 1974 & NYC 1930s | ✅ Pass |
 | Dec 22 | UI Alignment | Scroll to sections | City titles right-aligned | H1 width set to 100% / right | ✅ Pass |
 | Dec 22 | Sleigh Visibility | Check Sleigh size | Mascot should be prominent | Increased to 5rem with flight tilt | ✅ Pass |
+| Dec 22 | Emoji Rendering | Verify Deployment | Sleigh must show on Live Site | Fixed with inline-block display | ✅ Pass |

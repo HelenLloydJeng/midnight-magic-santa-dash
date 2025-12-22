@@ -175,20 +175,23 @@ body {
 }
 
 
-    #sleigh {
+#sleigh {
     position: fixed;
-    top: 80px;      /* Moved slightly down to clear the new glass nav */
-    right: 40px;    /* Moved further in from the edge */
-    font-size: 5rem; /* 🚀 Much bigger and visible! */
+    top: 80px;
+    right: 40px;
+    font-size: 5rem;
     z-index: 1000;
     pointer-events: none;
     
-    /* 🚀 Add a festive glow so he pops against dark skies */
+    /* Ensures emoji behaves like a solid object */
+    display: inline-block; 
+    width: auto;
+    line-height: 1;
+
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
-    
-    /* 🚀 Gentle 'Flying' animation */
     animation: flight-bob 3s ease-in-out infinite;
 }
+
 
 @keyframes flight-bob {
     0%, 100% { transform: translateY(0) rotate(-5deg); }
