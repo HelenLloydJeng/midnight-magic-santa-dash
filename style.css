@@ -9,6 +9,7 @@ body {
 
 .scroll-container {
     height: 100vh;
+    scroll-behavior: smooth;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-margin-top: 2em;
@@ -38,8 +39,9 @@ li > a {
 }
 
 li > a:hover {
-    background-color: red;
-    color: white
+
+    color: white;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 .hero{
@@ -109,4 +111,14 @@ li > a:hover {
     font-size: 2rem;
     z-index: 1000; /* Keeps it above everything */
     pointer-events: none; /* Allows clicking "through" the sleigh to buttons below */
+}
+
+/*glow animation*/
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #e60000, 0 0 20px #e60000 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+  }
+  to {
+    text-shadow: 0 0 20px #e60000, 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000, 0 0 80px #e60000;
+  }
 }
