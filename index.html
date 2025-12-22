@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midnight Magic: Santa's Global Dash</title>
-    
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo= ">
 </head>
 
-<header>
-    <ul id="main-nav">
-        <li><a href="#london">London<a></li>
-        <li><a href="#paris">Paris<a></li>
-        <li><a href="#tokyo">Tokyo<a></li>
-        <li><a href="#newyork">New York<a></li>
-    </ul>
+<body>
+    <header>
+    <nav id="main-nav"> <ul class="nav-links"> 
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#london">London</a></li>
+            <li><a href="#paris">Paris</a></li>
+        </ul>
+
+        <div class="timebox">
+            <div class="time"><span id="days">00</span><p>D</p></div>
+            <div class="time"><span id="hours">00</span><p>H</p></div>
+            <div class="time"><span id="minutes">00</span><p>M</p></div>
+            <div class="time"><span id="seconds">00</span><p>S</p></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#tokyo">Tokyo</a></li>
+            <li><a href="#newyork">New York</a></li>
+        </ul>
+
+    </nav> 
 </header>
 
-<body>
 
-   <div id="sleigh" role="img" aria-label="Santa's sleigh with reindeer flying across the sky">
-    🛷🎅
-</div>
+    <div id="sleigh" role="img" aria-label="Santa's sleigh with reindeer flying across the sky">
+        🛷🎅</div>
 
 <main class="scroll-container">
+                
     <section id="london" class="city-stop" aria-labelledby="london-heading">
  
         <article class="glass-card">
@@ -73,6 +87,7 @@
     </section>
 </main>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
