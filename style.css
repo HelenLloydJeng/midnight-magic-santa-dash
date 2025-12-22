@@ -62,7 +62,8 @@ body {
 
 .nav-links li a:hover {
     background-color: rgba(255, 77, 77, 0.2); 
-    color: #ff4d4d; 
+    color: #ff4d4d;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 /* Countdown Box */
@@ -156,3 +157,13 @@ body {
 #paris { background-image: url('assets/background-images/paris-bg.webp'); }
 #tokyo { background-image: url('assets/background-images/tokyo-bg.webp'); }
 #newyork { background-image: url('assets/background-images/newyork-bg.webp'); }
+
+/* glow animation */
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000, 0 0 80px #e60000;
+  }
+  
