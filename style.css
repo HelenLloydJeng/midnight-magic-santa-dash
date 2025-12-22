@@ -1,17 +1,19 @@
-/* Core Layout */
+/* Core Layout - Fixes the Scroll Lock */
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Keeps the body static */
     font-family: sans-serif;
     color: white;
-    background-color: #000b1a; /* Dark night sky */
+    background-color: #000b1a;
+    height: 100vh;
 }
 
 .scroll-container {
     position: relative;
     overflow: auto;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto; /* IMPORTANT: This brings your city scrolling back! */
     scroll-snap-type: y mandatory;
     
 }
@@ -37,47 +39,65 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-end; 
+    align-items: flex-end;   
     scroll-snap-align: start;
-    text-align: center;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     width: 100%;
+    padding-bottom: 5vh;
+    padding-right: 5%; 
+    box-sizing: border-box;     
 }
+
+.city-stop h1 {
+    width: 100%;
+    text-align: right; 
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+    margin: 10px 0; 
+}
+
+.city-stop h1::first-letter { color: #ff4d4d; }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.15); /* White tint */
-    backdrop-filter: blur(12px);          /* The magic blur */
-    -webkit-backdrop-filter: blur(12px);   /* Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 2.5rem;
-    border-radius: 20px;
-    color: white;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), rgba(0, 20, 40, 0.45));
+    backdrop-filter: blur(20px);
+    padding: 1.2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    max-width: 320px;
 }
 
-/* Specific City Backgrounds */
-#london { 
-    background-image: url('assets/background-images/london-bg.webp'); 
-}
-#paris { 
-    background-image: url('assets/background-images/paris-bg.webp'); 
-}
-#tokyo { 
-    background-image: url('assets/background-images/tokyo-bg.webp'); 
-}
-#newyork { 
-    background-image: url('assets/background-images/newyork-bg.webp'); 
+.food-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin: 10px auto;
+    display: block;
 }
 
+/* Sleigh Animation */
 #sleigh {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    z-index: 1000; /* Keeps it above everything */
-    pointer-events: none; /* Allows clicking "through" the sleigh to buttons below */
+    top: 80px;
+    right: 40px;
+    font-size: 5rem;
+    z-index: 1000;
+    animation: flight-bob 3s ease-in-out infinite;
 }
+
+@keyframes flight-bob {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Backgrounds */
+#london { background-image: url('assets/background-images/london-bg.webp'); }
+#paris { background-image: url('assets/background-images/paris-bg.webp'); }
+#tokyo { background-image: url('assets/background-images/tokyo-bg.webp'); }
+#newyork { background-image: url('assets/background-images/newyork-bg.webp'); }

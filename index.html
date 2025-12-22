@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midnight Magic: Santa's Global Dash</title>
+
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo= ">
@@ -27,6 +29,28 @@
 </header>
 
 <body>
+    <header>
+    <nav id="main-nav"> <ul class="nav-links"> 
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#london">London</a></li>
+            <li><a href="#paris">Paris</a></li>
+        </ul>
+
+        <div class="timebox">
+            <div class="time"><span id="days">00</span><p>D</p></div>
+            <div class="time"><span id="hours">00</span><p>H</p></div>
+            <div class="time"><span id="minutes">00</span><p>M</p></div>
+            <div class="time"><span id="seconds">00</span><p>S</p></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#tokyo">Tokyo</a></li>
+            <li><a href="#newyork">New York</a></li>
+        </ul>
+
+    </nav> 
+</header>
+
 
     <div id="sleigh" role="img" aria-label="Santa's sleigh with reindeer flying across the sky">
         🛷🎅
@@ -43,14 +67,15 @@
         </section>
       <main class="scroll-container">
     <section id="london" class="city-stop" aria-labelledby="london-heading">
-        <h1 id="london-heading">London</h1>
+ 
         <article class="glass-card">
             <h2>Santa's Snack</h2>
-            <p>In the UK, children leave out mince pies and sherry for Santa, plus a crunchy carrot for Rudolph!</p>
-             <p class="cheer-display">Total Cheers: <span id="london-count">0</span></p> 
-                        <button class="cheer-btn" data-city="london">Send Cheer 🎄</button>  
-                       
-                            </article>
+            <img src="assets/food/mince-pies.webp" alt="Mince Pies" class="food-img">
+            <p>A tradition centuries in the making! Since the Victorian era, Londoners have left sweet mince pies and a warming glass of sherry for Santa, with a carrot added for Rudolph since the 1940s to help him fly through the city fog.</p>
+            <p class="cheer-display">Total Cheers: <span id="london-count">0</span></p> 
+            <button class="cheer-btn" data-city="london">Send Cheer 🎄</button>  
+        </article>
+               <h1 id="london-heading">London</h1>
     </section>
 
         <section id="paris" class="city-stop" aria-labelledby="paris-heading">
@@ -70,6 +95,7 @@
             <p class="cheer-display">Total Cheers: <span id="paris-count">0</span></p>
             <button class="cheer-btn" data-city="paris">Send Cheer 🥐</button>
         </article>
+           <h1 id="paris-heading">Paris</h1>
     </section>
 
         <section id="tokyo" class="city-stop" aria-labelledby="tokyo-heading">
@@ -86,8 +112,9 @@
             <h2>Santa's Snack</h2>
             <p>A unique tradition! In Japan, families often celebrate with strawberry shortcake or even a festive bucket of KFC!</p>
             <p class="cheer-display">Total Cheers: <span id="tokyo-count">0</span></p>
-            <button class="cheer-btn" data-city="tokyo">❤️ Cheer</button> </div>
+            <button class="cheer-btn" data-city="tokyo">❤️ Cheer</button>
         </article>
+          <h1 id="tokyo-heading">Tokyo</h1>
     </section>
 
         <section id="newyork" class="city-stop" aria-labelledby="ny-heading">
@@ -105,12 +132,14 @@
             <h2>Santa's Snack</h2>
             <p>The classic American treat: a tall glass of cold milk and a plate of delicious chocolate chip cookies.</p>
             <p class="cheer-display">Total Cheers: <span id="newyork-count">0</span></p>
-                        <button class="cheer-btn" data-city="newyork">❤️ Cheer</button> </div>
+            <button class="cheer-btn" data-city="newyork">❤️ Cheer</button>
         </article>
+          <h1 id="ny-heading">New York</h1>
     </section>
 </main>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
+
 
 </html>
