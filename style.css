@@ -15,7 +15,7 @@ body {
     height: 100vh;
     overflow-y: auto; /* IMPORTANT: This brings your city scrolling back! */
     scroll-snap-type: y mandatory;
-    
+    scroll-behavior: smooth;
 }
 /* Navigation bar */
 
