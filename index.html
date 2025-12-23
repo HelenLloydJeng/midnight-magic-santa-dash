@@ -5,97 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midnight Magic: Santa's Global Dash</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo= ">
 </head>
 
 <body>
     <div class="snow-container"></div>
+
     <header>
-    <nav id="main-nav"> <ul class="nav-links"> 
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#london">London</a></li>
-            <li><a href="#paris">Paris</a></li>
-        </ul>
+        <nav id="main-nav"> 
+            <ul class="nav-links"> 
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#london">London</a></li>
+                <li><a href="#paris">Paris</a></li>
+                <li><a href="#tokyo">Tokyo</a></li>
+                <li><a href="#newyork">New York</a></li>
+            </ul>
+        </nav> 
+    </header>
 
-        <div class="timebox">
-            <div class="time"><span id="days">00</span><p>D</p></div>
-            <div class="time"><span id="hours">00</span><p>H</p></div>
-            <div class="time"><span id="minutes">00</span><p>M</p></div>
-            <div class="time"><span id="seconds">00</span><p>S</p></div>
-        </div>
+    <div id="sleigh" role="img" aria-label="Santa's sleigh with reindeer flying across the sky">🦌🛷🎅🎁</div>
 
-        <ul class="nav-links">
-            <li><a href="#tokyo">Tokyo</a></li>
-            <li><a href="#newyork">New York</a></li>
-        </ul>
-
-    </nav> 
-</header>
-
-
-    <div id="sleigh" role="img" aria-label="Santa's sleigh with reindeer flying across the sky">
-        🛷🎅</div>
-
-<main class="scroll-container">
+    <main class="scroll-container">
+        
+        <section id="hero" class="city-stop hero-section">
+            <div class="prologue-container">
+                <h1>Santa's Midnight Mission</h1>
+                <p class="narrative-text">
+                    The stars are aligned, the sleigh is packed, and the world is falling quiet. 
+                    As the clock ticks toward midnight, join Santa on a whirlwind journey across 
+                    oceans and continents. From the misty streets of London to the neon lights 
+                    of Tokyo, discover the magic left behind at every stop.
+                </p>
                 
-    <section id="london" class="city-stop" aria-labelledby="london-heading">
- 
-        <article class="glass-card">
-            
-<div class="cheer-controls">
-    <button class="btn-cheer" onclick="addCheer('london')">🎄 Send Cheer</button>
-    <p>Total Cheers: <span id="london-count">0</span></p>
-</div>
+                <div class="timebox">
+                    <div class="time"><span id="days">00</span><p>Days</p></div>
+                    <div class="time"><span id="hours">00</span><p>Hours</p></div>
+                    <div class="time"><span id="minutes">00</span><p>Mins</p></div>
+                    <div class="time"><span id="seconds">00</span><p>Secs</p></div>
+                </div>
 
+                <div class="scroll-indicator">
+                    <p>Scroll to begin the flight</p>
+                    <div class="arrow-down">↓</div>
+                </div>
+            </div>
+        </section>
 
-            <h2>Santa's Snack</h2>
-            <img src="assets/food/mince-pies.webp" alt="Mince Pies" class="food-img">
-            <p>A tradition centuries in the making! Since the Victorian era, Londoners have left sweet mince pies and a warming glass of sherry for Santa, with a carrot added for Rudolph since the 1940s to help him fly through the city fog.</p>
-            <p class="cheer-display">Total Cheers: <span id="london-count">0</span></p> 
-            <button class="cheer-btn" data-city="london">Send Cheer 🎄</button>  
-        </article>
-               <h1 id="london-heading">London</h1>
-    </section>
+        <section id="london" class="city-stop" aria-labelledby="london-heading">
+            <article class="glass-card">
+                <h2>Santa's Snack</h2>
+                <img src="assets/food/mince-pies.webp" alt="Mince Pies" class="food-img">
+                <p>A tradition centuries in the making! Since the Victorian era, Londoners have left sweet mince pies and a warming glass of sherry for Santa.</p>
+                <p class="cheer-display">Total Cheers: <span id="london-count">0</span></p> 
+                <button class="cheer-btn" onclick="handleCheer('london')">Send Cheer 🎄</button>  
+            </article>
+            <h1 id="london-heading">London</h1>
+        </section>
 
-    <section id="paris" class="city-stop" aria-labelledby="paris-heading">
-                <article class="glass-card">
-            <h2>Santa's Snack</h2>
-            <img src="assets/food/buche-de-noel.webp" alt="Yule Log Cake" class="food-img">
-            <p>In France, families enjoy the Bûche de Noël. Before it was a delicious chocolate cake, the Bûche de Noël was a massive wooden log burned in French fireplaces for several days to protect the home from evil spirits. As modern heaters replaced hearths in the late 1800s, the log was reimagined as the iconic dessert we love today!</p>
-            <p class="cheer-display">Total Cheers: <span id="paris-count">0</span></p>
-            <button class="cheer-btn" data-city="paris">Send Cheer 🥐</button>
-        </article>
-           <h1 id="paris-heading">Paris</h1>
-    </section>
+        <section id="paris" class="city-stop" aria-labelledby="paris-heading">
+            <article class="glass-card">
+                <h2>Santa's Snack</h2>
+                <img src="assets/food/buche-de-noel.webp" alt="Yule Log Cake" class="food-img">
+                <p>In France, families enjoy the Bûche de Noël, a delicious chocolate cake reimagined from the ancient tradition of burning massive wooden logs.</p>
+                <p class="cheer-display">Total Cheers: <span id="paris-count">0</span></p>
+                <button class="cheer-btn" onclick="handleCheer('paris')">Send Cheer 🥐</button>
+            </article>
+            <h1 id="paris-heading">Paris</h1>
+        </section>
 
-    <section id="tokyo" class="city-stop" aria-labelledby="tokyo-heading">
-      
-        <article class="glass-card">
-            <h2>Santa's Snack</h2>
-            <img src="assets/food/kentucky-chicken.webp" alt="KFC Bucket" class="food-img">
-            <p>A surprisingly modern tradition! Since a famous 'Kentucky for Christmas' marketing campaign in 1974, Japanese families celebrate with festive buckets of fried chicken and 'Kurisumasu Kyaki'—a light sponge cake topped with strawberries and cream that symbolizes the Japanese flag.</p>
-            <p class="cheer-display">Total Cheers: <span id="tokyo-count">0</span></p>
-            <button class="cheer-btn" data-city="tokyo">❤️ Cheer</button>
-        </article>
-          <h1 id="tokyo-heading">Tokyo</h1>
-    </section>
+        <section id="tokyo" class="city-stop" aria-labelledby="tokyo-heading">
+            <article class="glass-card">
+                <h2>Santa's Snack</h2>
+                <img src="assets/food/kentucky-chicken.webp" alt="KFC Bucket" class="food-img">
+                <p>A modern tradition! Japanese families celebrate with festive buckets of fried chicken and strawberry sponge cake symbolizing the flag.</p>
+                <p class="cheer-display">Total Cheers: <span id="tokyo-count">0</span></p>
+                <button class="cheer-btn" onclick="handleCheer('tokyo')">Send Cheer ❤️</button>
+            </article>
+            <h1 id="tokyo-heading">Tokyo</h1>
+        </section>
 
-    <section id="newyork" class="city-stop" aria-labelledby="ny-heading">
-      
-        <article class="glass-card">
-            <h2>Santa's Snack</h2>
-            <img src="assets/food/cookies-milk.webp" alt="Cookies and Milk" class="food-img">
-            <p>The classic American treat: a tall glass of cold milk and a plate of delicious chocolate chip cookies. The 'Milk and Cookies' tradition took off during the 1930s Depression, as parents taught children to share and show gratitude for gifts during hard times. Today, Santa enjoys these treats against the backdrop of Manhattan’s iconic holiday window displays.</p>
-            <p class="cheer-display">Total Cheers: <span id="newyork-count">0</span></p>
-            <button class="cheer-btn" data-city="newyork">❤️ Cheer</button>
-        </article>
-          <h1 id="ny-heading">New York</h1>
-    </section>
-</main>
+        <section id="newyork" class="city-stop" aria-labelledby="ny-heading">
+            <article class="glass-card">
+                <h2>Santa's Snack</h2>
+                <img src="assets/food/cookies-milk.webp" alt="Cookies and Milk" class="food-img">
+                <p>The classic American treat: cold milk and chocolate chip cookies, a tradition of gratitude that took off during the 1930s.</p>
+                <p class="cheer-display">Total Cheers: <span id="newyork-count">0</span></p>
+                <button class="cheer-btn" onclick="handleCheer('newyork')">Send Cheer 🥛</button>
+            </article>
+            <h1 id="ny-heading">New York</h1>
+        </section>
+    </main>
 
-        <script src="script.js"></script>
+    <footer class="festive-footer">
+        <p>Hand-crafted with 🎄 by Santa's Elves | Festive Frontend 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>

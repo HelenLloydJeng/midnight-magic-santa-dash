@@ -65,3 +65,42 @@ Dec 22 | Navigation | Click Navbar | Smooth scroll to city | Target section reac
 ### **Final Bug Log**
 * **Merge Conflicts:** Resolved branch divergence between `main` and `sidebar`.
 * **Script Load:** Moved `script.js` to the bottom of the body to ensure DOM elements are found.
+
+
+# 🛠️ Bug Testing & Quality Assurance Report
+
+### 1. Layout & Responsiveness
+| Feature | Test Case | Result | Status |
+| :--- | :--- | :--- | :--- |
+| **Navbar Width** | Verify navbar doesn't overlap the scrollbar or spill off-screen. | Fixed using `box-sizing: border-box` and `right: 16px` offset. | ✅ Fixed |
+| **Mobile Menu** | Check if all 5 links are visible on screens < 480px. | `flex-wrap: wrap` successfully stacks links into two neat rows. | ✅ Fixed |
+| **Hero Alignment** | Ensure "Santa's Midnight Mission" isn't hidden by the fixed Nav. | `padding-top: 120px` provides a clear buffer for the title. | ✅ Fixed |
+| **Section Snap** | Confirm "New York" (the final stop) is fully reachable. | Reverted width from `100vh` to `100%` to restore accurate scroll math. | ✅ Fixed |
+
+### 2. Animations & Visuals
+| Feature | Test Case | Result | Status |
+| :--- | :--- | :--- | :--- |
+| **Rudolph Flight** | Check if animation direction matches emoji facing (Left). | Reconfigured keyframes to fly from **Right to Left**. | ✅ Fixed |
+| **Animation Loop** | Verify the sleigh clears the screen before restarting. | `right: -300px` to `right: 110vw` ensures a smooth loop. | ✅ Fixed |
+| **Snow Overlay** | Ensure user can click buttons "through" the falling snow. | `pointer-events: none` applied to the snow container. | ✅ Fixed |
+
+### 3. Functional Logic
+| Feature | Test Case | Result | Status |
+| :--- | :--- | :--- | :--- |
+| **Cheer Counter** | Click "Send Cheer" and verify the number increases. | LocalStorage updates and UI reflects the new count instantly. | ✅ Fixed |
+| **State Persistence** | Refresh the page after cheering for a city. | Button remains disabled and text stays "Cheered! ❤️". | ✅ Fixed |
+| **Countdown** | Verify timer is counting down to Dec 25, 2025. | `setInterval` is correctly updating days, hours, and mins. | ✅ Fixed |
+
+
+### 4. Automated Validation
+| Language | Tool Used | Result | Screenshot |
+| :--- | :--- | :--- | :--- |
+| **HTML5** | W3C Validator | Pass (0 Errors) | ![HTML Screenshot](assets/images/Screenshot_23-12-2025_125324_validator.w3.org.jpeg) |
+| **CSS3** | W3C Jigsaw | Pass (0 Errors) | ![CSS Screenshot](assets/images/Screenshot_23-12-2025_124343_jigsaw.w3.org.jpeg) |
+| **JavaScript** | JSHint | Valid Syntax | [Verified] |
+
+Responsive Design (Mobile)
+| Device | Observation | Status |
+| :--- | :--- | :--- |
+| **Desktop** | Nav links in a single row, smooth scroll-snapping. | ✅ Pass |
+| **Mobile (S20/iPhone)** | Nav links wrap to 2 rows; no horizontal scrolling. | ✅ Pass |

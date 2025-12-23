@@ -67,7 +67,7 @@ F-**Festive Animations**: CSS-based snowfall overlay for a seasonal atmosphere.
 
 ## 👥 The Team
 - **Lead Developer (UI, Content & Layout Optimization)**: Helen Lloyd-Jeng
-- **Architecture & Navigation Integration**: [sala]
+- **Architecture & Navigation Integration**: [Saladin-B]
 - **Narrative images & Cross-Platform Testing**: [Dom]
 
 

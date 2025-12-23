@@ -1,18 +1,8 @@
-/* ==========================================
-   1. NAVIGATION & SCROLL LOGIC (Veteran's Area)
-   ========================================== */
-// [Keep existing scroll/nav code here]
+/* --- Santa's Midnight Mission: Core Logic --- */
 
- /* ==========================================
-    2. INTERACTIVE COMPONENTS (Cheer System)
-    ========================================== */
-
-// 1. SELECT ELEMENTS
 const cheerButtons = document.querySelectorAll('.cheer-btn');
 
-// 2. FUNCTIONS (The "Brain")
-
-// Helper to update the text on the screen
+// Update UI from LocalStorage
 function updateCounterDisplay(city) {
     const count = localStorage.getItem(`cheer_count_${city}`) || 0;
     const displayElement = document.getElementById(`${city}-count`);
@@ -21,7 +11,14 @@ function updateCounterDisplay(city) {
     }
 }
 
-// Logic to increase the number
+// Button styling after click
+function applyCheeredState(button) {
+    button.textContent = "Cheered! ❤️";
+    button.classList.add('cheered');
+    button.disabled = true;
+}
+
+// Main cheer handler
 function handleCheer(city, button) {
     let currentCount = parseInt(localStorage.getItem(`cheer_count_${city}`)) || 0;
     currentCount++;
@@ -31,91 +28,53 @@ function handleCheer(city, button) {
     
     updateCounterDisplay(city);
     applyCheeredState(button);
+    console.log(`Mission Update: Support sent to ${city}!`);
 }
 
-// Logic to change button appearance
-function applyCheeredState(button) {
-    button.textContent = "Cheered! ❤️";
-    button.classList.add('cheered');
-    button.disabled = true;
-}
-
-// Logic to check storage when page opens
-function loadExistingCheers() {
+// Initial load
+function initCheerSystem() {
     cheerButtons.forEach(button => {
         const city = button.getAttribute('data-city');
         updateCounterDisplay(city);
 
-        const hasCheered = localStorage.getItem(`has_cheered_${city}`);
-        if (hasCheered === 'true') {
+        if (localStorage.getItem(`has_cheered_${city}`) === 'true') {
             applyCheeredState(button);
         }
+
+        button.addEventListener('click', () => handleCheer(city, button));
     });
 }
 
-/**
- * Midnight Magic Santa Dash - Countdown Timer
- * Set for Christmas 2025
- */
-
+/* --- Countdown Timer --- */
 const startCountdown = () => {
-    // The date we're counting down to
     const targetDate = new Date("December 25, 2025 00:00:00").getTime();
 
     const updateTimer = () => {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        // Time calculations for days, hours, minutes and seconds
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Selecting the elements from HTML
-        const dDisplay = document.getElementById("days");
-        const hDisplay = document.getElementById("hours");
-        const mDisplay = document.getElementById("minutes");
-        const sDisplay = document.getElementById("seconds");
+        const d = document.getElementById("days");
+        const h = document.getElementById("hours");
+        const m = document.getElementById("minutes");
+        const s = document.getElementById("seconds");
 
-        // Update the HTML content (only if the elements exist)
-        if (dDisplay) dDisplay.innerText = days.toString().padStart(2, '0');
-        if (hDisplay) hDisplay.innerText = hours.toString().padStart(2, '0');
-        if (mDisplay) mDisplay.innerText = minutes.toString().padStart(2, '0');
-        if (sDisplay) sDisplay.innerText = seconds.toString().padStart(2, '0');
+        if (d) d.innerText = days.toString().padStart(2, '0');
+        if (h) h.innerText = hours.toString().padStart(2, '0');
+        if (m) m.innerText = minutes.toString().padStart(2, '0');
+        if (s) s.innerText = seconds.toString().padStart(2, '0');
     };
 
-    // Update every 1 second
     setInterval(updateTimer, 1000);
-    // Run immediately so we don't wait 1 second for the first update
     updateTimer();
-    
-    console.log("Countdown script initialized for Dec 2025!");
 };
 
-// Start the function
-startCountdown();
-
-// 3. EXECUTION (The "Start" switch)
-loadExistingCheers();
-
-cheerButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const city = button.getAttribute('data-city');
-        handleCheer(city, button);
-    });
+// Launch All Systems
+document.addEventListener('DOMContentLoaded', () => {
+    startCountdown();
+    initCheerSystem();
 });
-
-function addCheer(cityId) {
-    const countElement = document.getElementById(cityId + "-count");
-    let currentCount = parseInt(countElement.innerText);
-    currentCount++;
-    countElement.innerText = currentCount;
-    
-    // Optional: Add a little console log for fun
-    console.log("Cheer sent to " + cityId + "! Total: " + currentCount);
-}
-/* ==========================================
-   3. UI ENHANCEMENTS (Newbie's Area)
-   ========================================== */
-// [Keep any asset or text-swapping code here]
