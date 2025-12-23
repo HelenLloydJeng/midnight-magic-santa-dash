@@ -90,3 +90,17 @@ Dec 22 | Navigation | Click Navbar | Smooth scroll to city | Target section reac
 | **Cheer Counter** | Click "Send Cheer" and verify the number increases. | LocalStorage updates and UI reflects the new count instantly. | ✅ Fixed |
 | **State Persistence** | Refresh the page after cheering for a city. | Button remains disabled and text stays "Cheered! ❤️". | ✅ Fixed |
 | **Countdown** | Verify timer is counting down to Dec 25, 2025. | `setInterval` is correctly updating days, hours, and mins. | ✅ Fixed |
+
+
+### 4. Automated Validation
+| Language | Tool Used | Result | Screenshot |
+| :--- | :--- | :--- | :--- |
+| **HTML5** | W3C Validator | Pass (0 Errors) | ![HTML Screenshot](assets/images/Screenshot_23-12-2025_125324_validator.w3.org.jpeg) |
+| **CSS3** | W3C Jigsaw | Pass (0 Errors) | ![CSS Screenshot](assets/images/Screenshot_23-12-2025_124343_jigsaw.w3.org.jpeg) |
+| **JavaScript** | JSHint | Valid Syntax | [Verified] |
+
+Responsive Design (Mobile)
+| Device | Observation | Status |
+| :--- | :--- | :--- |
+| **Desktop** | Nav links in a single row, smooth scroll-snapping. | ✅ Pass |
+| **Mobile (S20/iPhone)** | Nav links wrap to 2 rows; no horizontal scrolling. | ✅ Pass |
