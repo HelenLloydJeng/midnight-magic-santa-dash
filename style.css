@@ -132,39 +132,34 @@ body {
 }
 
 
-/* Sleigh Animation */
+
 #sleigh {
-    position: fixed;
+    position: fixed !important;
     top: 100px;
-    /* Start completely off-screen to the right */
-    right: -300px;        
-    font-size: 3.5rem;
-    z-index: 999;
+    /* Force start off-screen to the right */
+    right: -400px;        
+    font-size: 4rem;
+    z-index: 99999;      /* Ensure he is above EVERYTHING */
     pointer-events: none;
     white-space: nowrap; 
+    display: block !important;
     
-    /* Animation: Moves right to left for 20 seconds */
-    animation: santa-flight-left 20s linear infinite;
+    /* Animation: 15 seconds is a good 'flying' speed */
+    animation: santa-flight-left 15s linear infinite !important;
 }
 
 @keyframes santa-flight-left {
     0% {
-        right: -300px;
+        right: -400px;
         transform: translateY(0) rotate(-5deg);
-    }
-    25% {
-        transform: translateY(-25px) rotate(2deg);
     }
     50% {
-        transform: translateY(0) rotate(-5deg);
-    }
-    75% {
-        transform: translateY(-25px) rotate(2deg);
+        transform: translateY(-30px) rotate(2deg);
     }
     100% {
-        /* Fly all the way past the left edge of the screen */
-        right: 110vw;      
-        transform: translateY(0);
+        /* This forces him to travel to the far left */
+        right: 120vw;      
+        transform: translateY(0) rotate(-5deg);
     }
 }
 
