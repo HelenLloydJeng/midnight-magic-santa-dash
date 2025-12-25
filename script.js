@@ -53,15 +53,26 @@ const startCountdown = () => {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
         const d = document.getElementById("days");
         const h = document.getElementById("hours");
         const m = document.getElementById("minutes");
         const s = document.getElementById("seconds");
+
+        // If Christmas has passed, stop at 00:00:00:00
+        if (distance < 0) {
+            if (d) d.innerText = "00";
+            if (h) h.innerText = "00";
+            if (m) m.innerText = "00";
+            if (s) s.innerText = "00";
+
+            clearInterval(timerInterval);
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         if (d) d.innerText = days.toString().padStart(2, '0');
         if (h) h.innerText = hours.toString().padStart(2, '0');
@@ -69,7 +80,7 @@ const startCountdown = () => {
         if (s) s.innerText = seconds.toString().padStart(2, '0');
     };
 
-    setInterval(updateTimer, 1000);
+    const timerInterval = setInterval(updateTimer, 1000);
     updateTimer();
 };
 
