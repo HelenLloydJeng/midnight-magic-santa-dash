@@ -57,13 +57,17 @@ const startCountdown = () => {
         const h = document.getElementById("hours");
         const m = document.getElementById("minutes");
         const s = document.getElementById("seconds");
+        const messageEl = document.getElementById("message");
 
-        // If Christmas has passed, stop at 00:00:00:00
-        if (distance < 0) {
+        // When Christmas is over
+        if (distance <= 0) {
             if (d) d.innerText = "00";
             if (h) h.innerText = "00";
             if (m) m.innerText = "00";
             if (s) s.innerText = "00";
+            if (messageEl) {
+                messageEl.innerText = "Merry Christmas! Santa delivered all the gifts.";
+            }
 
             clearInterval(timerInterval);
             return;
@@ -74,16 +78,19 @@ const startCountdown = () => {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        if (d) d.innerText = days.toString().padStart(2, '0');
-        if (h) h.innerText = hours.toString().padStart(2, '0');
-        if (m) m.innerText = minutes.toString().padStart(2, '0');
-        if (s) s.innerText = seconds.toString().padStart(2, '0');
+        if (d) d.innerText = days.toString().padStart(2, "0");
+        if (h) h.innerText = hours.toString().padStart(2, "0");
+        if (m) m.innerText = minutes.toString().padStart(2, "0");
+        if (s) s.innerText = seconds.toString().padStart(2, "0");
+        if (messageEl) {
+            // Clear message while counting down (optional)
+            messageEl.innerText = "";
+        }
     };
 
     const timerInterval = setInterval(updateTimer, 1000);
     updateTimer();
 };
-
 // Launch All Systems
 document.addEventListener('DOMContentLoaded', () => {
     startCountdown();
